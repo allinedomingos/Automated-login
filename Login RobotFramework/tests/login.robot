@@ -10,11 +10,9 @@ Test Teardown   Close Session
 
 *** Test Cases ***
 Login NetFlix
-    Dado que estou na página de login 
-    Quando submeto minhas credencias de acesso 
+    [tags]     login
+    Dado que eu acesso a página de login
+    Quando eu submeto minhas credenciais "seuemail@gmail.com" e "suasenha"
     Entao devo ser autenticado
-   
 
-*** Keywords ***
-Quando submeto minhas credencias de acesso 
-    Login With      seuemail@gmail.com  suasenha
+

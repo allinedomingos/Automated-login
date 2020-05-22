@@ -8,7 +8,7 @@ Resource    pages/LoginPage.robot
 
 *** Keywords ***
 Dado que estou na página de login 
-    Open Session
+    Go To      ${base_url}/login 
 
 Quando submeto minhas credencias de acesso "${email}" e "${pass}"
     Login With      ${email}   ${pass}
