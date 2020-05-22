@@ -1,53 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot rpa="false" generated="20200522 14:34:15.543" generator="Robot 3.2.1 (Python 2.7.10 on darwin)">
-<suite source="/Users/alline.silva/Documents/Login RobotFramework/tests/login.robot" id="s1" name="Login">
-<test id="s1-t1" name="Disponibilizar produto">
+<robot rpa="false" generated="20200522 18:34:30.588" generator="Robot 3.2.1 (Python 2.7.10 on darwin)">
+<suite source="/Users/alline.silva/Documents/GitHub/Login-automatizado/Login RobotFramework/tests/login.robot" id="s1" name="Login">
+<test id="s1-t1" name="Login NetFlix">
 <kw type="setup" name="Open Session" library="BasePage">
+<kw name="Open Chrome" library="BasePage">
 <kw name="Open Browser" library="SeleniumLibrary">
 <doc>Opens a new browser instance to the optional ``url``.</doc>
 <arguments>
-<arg>https://www.netflix.com/br/login</arg>
+<arg>${base_url}/login</arg>
 <arg>chrome</arg>
+<arg>options=add_experimental_option('excludeSwitches', ['enable-logging'])</arg>
 </arguments>
-<msg timestamp="20200522 14:34:15.935" level="INFO">Opening browser 'chrome' to base url 'https://www.netflix.com/br/login'.</msg>
-<status status="PASS" endtime="20200522 14:34:23.949" starttime="20200522 14:34:15.934"></status>
+<msg timestamp="20200522 18:34:30.973" level="INFO">Opening browser 'chrome' to base url 'https://www.netflix.com/br/login'.</msg>
+<status status="PASS" endtime="20200522 18:34:39.725" starttime="20200522 18:34:30.973"></status>
+</kw>
+<status status="PASS" endtime="20200522 18:34:39.726" starttime="20200522 18:34:30.972"></status>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <doc>Sets the implicit wait value used by Selenium.</doc>
 <arguments>
 <arg>2</arg>
 </arguments>
-<status status="PASS" endtime="20200522 14:34:23.955" starttime="20200522 14:34:23.950"></status>
+<status status="PASS" endtime="20200522 18:34:39.729" starttime="20200522 18:34:39.726"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:23.956" starttime="20200522 14:34:15.934"></status>
+<kw name="Set Window Size" library="SeleniumLibrary">
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<arguments>
+<arg>1280</arg>
+<arg>800</arg>
+</arguments>
+<status status="PASS" endtime="20200522 18:34:39.857" starttime="20200522 18:34:39.729"></status>
+</kw>
+<status status="PASS" endtime="20200522 18:34:39.857" starttime="20200522 18:34:30.972"></status>
 </kw>
 <kw name="Dado que estou na página de login" library="actions">
-<kw name="Open Session" library="BasePage">
-<kw name="Open Browser" library="SeleniumLibrary">
-<doc>Opens a new browser instance to the optional ``url``.</doc>
+<kw name="Go To" library="SeleniumLibrary">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
 <arguments>
-<arg>https://www.netflix.com/br/login</arg>
-<arg>chrome</arg>
+<arg>${base_url}/login</arg>
 </arguments>
-<msg timestamp="20200522 14:34:23.965" level="INFO">Opening browser 'chrome' to base url 'https://www.netflix.com/br/login'.</msg>
-<status status="PASS" endtime="20200522 14:34:31.940" starttime="20200522 14:34:23.965"></status>
+<msg timestamp="20200522 18:34:39.859" level="INFO">Opening url 'https://www.netflix.com/br/login'</msg>
+<status status="PASS" endtime="20200522 18:34:41.931" starttime="20200522 18:34:39.858"></status>
 </kw>
-<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<arguments>
-<arg>2</arg>
-</arguments>
-<status status="PASS" endtime="20200522 14:34:31.944" starttime="20200522 14:34:31.941"></status>
+<status status="PASS" endtime="20200522 18:34:41.931" starttime="20200522 18:34:39.858"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:31.944" starttime="20200522 14:34:23.964"></status>
-</kw>
-<status status="PASS" endtime="20200522 14:34:31.944" starttime="20200522 14:34:23.957"></status>
-</kw>
-<kw name="Quando submeto minhas credencias de acesso">
+<kw name="Quando submeto minhas credencias de acesso &quot;seuemail@gmail.com&quot; e &quot;suasenha&quot;" library="actions">
 <kw name="Login With" library="LoginPage">
 <arguments>
-<arg>lline.domingosdmg@gmail.com</arg>
-<arg>liamchris2008</arg>
+<arg>${email}</arg>
+<arg>${pass}</arg>
 </arguments>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -55,8 +56,8 @@
 <arg>css:input[name=userLoginId]</arg>
 <arg>${email}</arg>
 </arguments>
-<msg timestamp="20200522 14:34:31.946" level="INFO">Typing text 'lline.domingosdmg@gmail.com' into text field 'css:input[name=userLoginId]'.</msg>
-<status status="PASS" endtime="20200522 14:34:32.626" starttime="20200522 14:34:31.946"></status>
+<msg timestamp="20200522 18:34:41.935" level="INFO">Typing text 'seuemail@gmail.com' into text field 'css:input[name=userLoginId]'.</msg>
+<status status="PASS" endtime="20200522 18:34:42.840" starttime="20200522 18:34:41.935"></status>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
@@ -64,17 +65,17 @@
 <arg>css:input[name=password]</arg>
 <arg>${pass}</arg>
 </arguments>
-<msg timestamp="20200522 14:34:32.628" level="INFO">Typing text 'liamchris2008' into text field 'css:input[name=password]'.</msg>
-<status status="PASS" endtime="20200522 14:34:32.975" starttime="20200522 14:34:32.627"></status>
+<msg timestamp="20200522 18:34:42.841" level="INFO">Typing text 'suasenha' into text field 'css:input[name=password]'.</msg>
+<status status="PASS" endtime="20200522 18:34:43.140" starttime="20200522 18:34:42.840"></status>
 </kw>
 <kw name="Submit Form" library="SeleniumLibrary">
 <doc>Submits a form identified by ``locator``.</doc>
-<msg timestamp="20200522 14:34:32.975" level="INFO">Submitting form 'None'.</msg>
-<status status="PASS" endtime="20200522 14:34:33.034" starttime="20200522 14:34:32.975"></status>
+<msg timestamp="20200522 18:34:43.141" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" endtime="20200522 18:34:43.229" starttime="20200522 18:34:43.140"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:33.034" starttime="20200522 14:34:31.945"></status>
+<status status="PASS" endtime="20200522 18:34:43.229" starttime="20200522 18:34:41.933"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:33.034" starttime="20200522 14:34:31.945"></status>
+<status status="PASS" endtime="20200522 18:34:43.229" starttime="20200522 18:34:41.932"></status>
 </kw>
 <kw name="Entao devo ser autenticado" library="actions">
 <kw name="Sleep" library="BuiltIn">
@@ -82,41 +83,68 @@
 <arguments>
 <arg>2</arg>
 </arguments>
-<msg timestamp="20200522 14:34:35.037" level="INFO">Slept 2 seconds</msg>
-<status status="PASS" endtime="20200522 14:34:35.037" starttime="20200522 14:34:33.036"></status>
+<msg timestamp="20200522 18:34:45.231" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" endtime="20200522 18:34:45.232" starttime="20200522 18:34:43.230"></status>
 </kw>
 <kw name="Wait Until Page Contains" library="SeleniumLibrary">
 <doc>Waits until ``text`` appears on the current page.</doc>
 <arguments>
 <arg>Quem está assistindo?</arg>
 </arguments>
-<status status="PASS" endtime="20200522 14:34:42.051" starttime="20200522 14:34:35.038"></status>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20200522 18:34:49.103" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.61)
+</msg>
+<status status="FAIL" endtime="20200522 18:34:49.103" starttime="20200522 18:34:49.083"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:42.052" starttime="20200522 14:34:33.035"></status>
+<msg timestamp="20200522 18:34:49.103" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.61)
+</msg>
+<msg timestamp="20200522 18:34:49.109" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.61)
+</msg>
+<status status="FAIL" endtime="20200522 18:34:49.109" starttime="20200522 18:34:45.232"></status>
+</kw>
+<status status="FAIL" endtime="20200522 18:34:49.110" starttime="20200522 18:34:43.230"></status>
 </kw>
 <kw type="teardown" name="Close Session" library="BasePage">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" endtime="20200522 14:34:42.248" starttime="20200522 14:34:42.054"></status>
+<status status="PASS" endtime="20200522 18:34:49.258" starttime="20200522 18:34:49.112"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:42.249" starttime="20200522 14:34:42.053"></status>
+<status status="PASS" endtime="20200522 18:34:49.258" starttime="20200522 18:34:49.111"></status>
 </kw>
-<status status="PASS" endtime="20200522 14:34:42.249" critical="yes" starttime="20200522 14:34:15.933"></status>
+<tags>
+<tag>login</tag>
+</tags>
+<status status="FAIL" endtime="20200522 18:34:49.259" critical="yes" starttime="20200522 18:34:30.971">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.61)
+</status>
 </test>
 <doc>Login com sucesso</doc>
-<status status="PASS" endtime="20200522 14:34:42.252" starttime="20200522 14:34:15.547"></status>
+<status status="FAIL" endtime="20200522 18:34:49.261" starttime="20200522 18:34:30.592"></status>
 </suite>
 <statistics>
 <total>
-<stat fail="0" pass="1">Critical Tests</stat>
-<stat fail="0" pass="1">All Tests</stat>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
 </total>
 <tag>
+<stat fail="1" pass="0">login</stat>
 </tag>
 <suite>
-<stat fail="0" id="s1" name="Login" pass="1">Login</stat>
+<stat fail="1" id="s1" name="Login" pass="0">Login</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20200522 18:34:49.103" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=83.0.4103.61)
+</msg>
 </errors>
 </robot>
