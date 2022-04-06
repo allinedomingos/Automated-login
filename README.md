@@ -1,7 +1,7 @@
-# Login-automatizado
-Test case de login automatizado no Netflix ;)
+# Automated login
+Netflix auto login test case ;)
 
-Katalon Studio - Arquivo executável Login.java
+Katalon Studio - Login.java executable file
 
-Robot Framework -  Arquivo executável login.robot
-* Comando: python -m robot login.robot
+Robot Framework - login.robot executable file
+* Command: python -m robot login.robot
